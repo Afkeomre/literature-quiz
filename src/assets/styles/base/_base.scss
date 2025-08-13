@@ -25,7 +25,8 @@ button {
     z-index: 5;
     top: 50%;
     transform: translate(0, -50%);
-    display: block;
+    display: inline-block;
+    will-change: transform;
     width: 36px;
     height: 26px;
     background-image: url('/icons/arrow.svg');
