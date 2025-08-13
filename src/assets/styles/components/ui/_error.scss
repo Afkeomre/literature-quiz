@@ -1,0 +1,35 @@
+@use '../../base/mixins';
+
+.error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 40px;
+
+  &__title {
+    color: red;
+    border-radius: 5px;
+    font-size: 56px;
+    font-weight: 600;
+
+    @include mixins.respond(sm) {
+      font-size: 46px;
+    }
+  }
+
+  &__link {
+    padding-left: 46px;
+
+    &::after {
+      left: 0;
+      transform: translate(0, -50%) rotate(180deg);
+    }
+
+    &:hover {
+      &::after {
+        transform: translate(-5px, -50%) rotate(180deg);
+      }
+    }
+  }
+}

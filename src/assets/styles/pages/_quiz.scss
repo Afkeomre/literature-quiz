@@ -1,0 +1,87 @@
+@use '../base/vars';
+@use '../base/mixins';
+
+.quiz {
+  background-image: url('/quiz/quiz-bg-spare.jpg');
+
+  @include mixins.fade(0.7, 5px);
+
+  &__content {
+    justify-content: space-evenly;
+    align-items: center;
+    flex: 1;
+
+    @include mixins.respond(sm) {
+      padding: 15px 0;
+    }
+  }
+
+  &__question {
+    text-align: center;
+  }
+
+  &__question-number {
+    font-size: 28px;
+    margin-bottom: 40px;
+
+    @include mixins.respond(sm) {
+      font-size: 22px;
+    }
+  }
+
+  &__question-wording {
+    font-size: 32px;
+
+    @include mixins.respond(sm) {
+      font-size: 24px;
+    }
+  }
+
+  &__separator {
+    max-width: 210px;
+    width: 100%;
+    height: 1px;
+    background-color: vars.$light;
+  }
+
+  &__options {
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    @include mixins.respond(md) {
+      flex-direction: column;
+      gap: 40px;
+    }
+  }
+
+  &__img-wrapper {
+    max-width: 320px;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    border-radius: 10px;
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    background-color: vars.$light-middle;
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    color: vars.$dark;
+    max-width: 600px;
+    width: 100%;
+    margin-left: -20px;
+
+    @include mixins.respond(md) {
+      margin-left: 0;
+    }
+  }
+}

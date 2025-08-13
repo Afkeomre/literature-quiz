@@ -1,0 +1,58 @@
+@use '../../base/mixins';
+@use '../../base/vars';
+
+.radio-button {
+  justify-content: flex-end;
+
+  @include mixins.respond(lg) {
+    justify-content: center;
+  }
+
+  &__wrapper {
+    position: relative;
+  }
+
+  &__real {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    opacity: 0;
+
+    &:checked + .radio-button__custom::before {
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+
+  &__custom {
+    position: relative;
+    display: block;
+    width: 16px;
+    height: 16px;
+    background: vars.$light;
+    border: 2px solid vars.$selected;
+    border-radius: 50%;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      width: 8px;
+      height: 8px;
+      background-color: vars.$selected;
+      border-radius: 50%;
+      transition: all 0.2s ease-in;
+    }
+  }
+
+  &__label {
+    font-size: 20px;
+
+    @include mixins.respond(sm) {
+      font-size: 18px;
+    }
+  }
+}

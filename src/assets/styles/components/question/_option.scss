@@ -1,0 +1,92 @@
+@use '../../base/vars';
+@use '../../base/mixins';
+
+.option {
+  &__btn {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    gap: 20px;
+    width: 100%;
+    border-radius: 10px;
+    background-color: vars.$light;
+    padding: 15px 30px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+    white-space: pre-line;
+    transition: all 0.2s ease;
+
+    @include mixins.respond(sm) {
+      padding: 10px 20px;
+    }
+
+    &:hover:not(.option__btn_disabled) {
+      transform: translateX(5px);
+      background-color: vars.$button-bg;
+
+      @include mixins.respond(md) {
+        transform: translateX(0);
+      }
+
+      .option__letter {
+        color: vars.$light;
+        background-color: vars.$selected;
+      }
+
+      .option__text {
+        color: vars.$letter;
+      }
+    }
+  }
+
+  &__btn_disabled {
+    pointer-events: none;
+  }
+
+  &__btn_correct {
+    background-color: vars.$correct;
+
+    .option__letter {
+      color: vars.$letter-correct;
+      background-color: vars.$letter-correct-bg;
+    }
+  }
+
+  &__btn_incorrect {
+    background-color: vars.$incorrect;
+
+    .option__letter {
+      color: vars.$letter-incorrect;
+      background-color: vars.$letter-incorrect-bg;
+    }
+  }
+
+  &__letter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    color: vars.$letter;
+    background-color: vars.$letter-bg;
+    font-size: 28px;
+    box-shadow: 5px 4px 6px 0 rgba(0, 0, 0, 0.05);
+    transition: all 0.2s ease;
+
+    @include mixins.respond(sm) {
+      width: 36px;
+      height: 36px;
+      font-size: 24px;
+    }
+  }
+
+  &__text {
+    font-weight: 500;
+    font-size: 22px;
+
+    @include mixins.respond(sm) {
+      font-size: 18px;
+    }
+  }
+}

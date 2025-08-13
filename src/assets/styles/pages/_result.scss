@@ -1,0 +1,58 @@
+@use '../base/mixins';
+
+.result {
+	background-image: url('/result/result-bg.jpg');
+	background-position: center 30%;
+
+	@include mixins.fade(0.4, 3px);
+
+	@include mixins.respond(sm) {
+		background-position: 70% 30%;
+	}
+
+	&__content {
+		justify-content: space-evenly;
+		align-items: center;
+		flex: 1;
+	}
+
+	&__title {
+		text-align: center;
+		font-size: 48px;
+		font-weight: 700;
+		
+		@include mixins.respond(md) {
+			font-size: 42px;
+		}
+	}
+
+	&__score-group {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 20px;
+	}
+
+	&__score {
+		font-weight: 700;
+		font-size: 250px;
+		line-height: 1.2;
+
+		@include mixins.respond(md) {
+			font-size: 180px;
+		}
+
+		@include mixins.respond(sm) {
+			font-size: 120px;
+		}
+	}
+
+	&__text {
+		font-size: 24px;
+		text-align: center;
+
+		@include mixins.respond(sm) {
+			font-size: 20px;
+		}
+	}
+}

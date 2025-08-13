@@ -1,0 +1,12 @@
+@use './base/reset';
+@use './base/base';
+@use './base/fonts';
+@use './layouts/layout';
+@use './pages/welcome';
+@use './pages/quiz';
+@use './pages/result';
+@use './components/ui/button';
+@use './components/question/option';
+@use './components/ui/radio-button';
+@use './components/ui/loader';
+@use './components/ui/error';

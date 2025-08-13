@@ -1,0 +1,41 @@
+@use './vars';
+
+body {
+  font-family: vars.$font-primary;
+  font-size: 18px;
+  color: vars.$light;
+}
+
+button {
+  cursor: pointer;
+}
+
+#root {
+  height: 100%;
+}
+
+.link {
+  font-size: 28px;
+  position: relative;
+  transition: all 0.4s ease-in;
+
+  &::after {
+    content: '';
+    position: absolute;
+    z-index: 5;
+    top: 50%;
+    transform: translate(0, -50%);
+    display: block;
+    width: 36px;
+    height: 26px;
+    background-image: url('/icons/arrow.svg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: all 0.4s ease-in;
+  }
+
+  &:hover {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+  }
+}
