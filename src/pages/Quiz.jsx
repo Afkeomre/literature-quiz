@@ -109,6 +109,10 @@ const Quiz = () => {
   }, [progress, questionsStatus]);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [progress.active]);
+
+  useEffect(() => {
     if (progress.answers[progress.active] !== undefined && btnNextRef.current) {
       btnNextRef.current.scrollIntoView(true);
     }
