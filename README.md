@@ -49,7 +49,6 @@ npm run build
 Если у вас есть вопросы, предложения или вы заметили ошибки в квизе, пишите сюда:  
 
 - **Email**: [ivoronkova538@yandex.ru](mailto:ivoronkova538@yandex.ru)  
-- **GitHub**: [Afkeomre](https://github.com/Afkeomre)  
 - **Issues**: [создать issue](https://github.com/Afkeomre/literature-quiz/issues)  
 
 Любая обратная связь приветствуется!😊
